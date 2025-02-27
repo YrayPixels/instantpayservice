@@ -58,7 +58,7 @@ app.post('/api/prepare-transaction', checkAuth, async (req: any, res: any) => {
       })
     ).json();
 
-    res.status(200).json({transaction: swapResponse.swapTransaction});
+    res.status(200).json({ transaction: swapResponse.swapTransaction });
   } catch (error) {
     res.status(500).json({ error: error });
   }
