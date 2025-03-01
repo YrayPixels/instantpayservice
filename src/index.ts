@@ -26,6 +26,9 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 
 // Prepare Transaction
+app.get('/', async (req: any, res: any) => {
+  return res.status(200).json({ "status": "OK" });
+});
 app.post('/api/prepare-transaction', checkAuth, async (req: any, res: any) => {
   try {
     const { publicKey, tokenMint, amount } = req.body;
@@ -65,7 +68,7 @@ app.post('/api/prepare-transaction', checkAuth, async (req: any, res: any) => {
 });
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
